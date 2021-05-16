@@ -76,6 +76,9 @@ void export_libint2_wrappers_objects(){
 
   def("print_shell", expt_print_shells_v1);
 
+  size_t (*expt_nbasis_v1)(const std::vector<libint2::Shell>& shells) = &nbasis;
+  def("nbasis", expt_nbasis_v1);
+
 
   class_<libint2::Shell>("libint2_Shell",init<>())
       .def(init<const libint2::Shell&>())
